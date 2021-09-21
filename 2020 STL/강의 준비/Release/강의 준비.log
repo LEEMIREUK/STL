@@ -1,0 +1,13 @@
+﻿  소스.cpp
+C:\Users\LeeMiReuk\Desktop\STL\2020 STL\강의 준비\소스.cpp(335,2): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\LeeMiReuk\Desktop\STL\2020 STL\강의 준비\소스.cpp(343,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\LeeMiReuk\Desktop\STL\2020 STL\강의 준비\소스.cpp(348,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\LeeMiReuk\Desktop\STL\2020 STL\강의 준비\소스.cpp(358,13): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\LeeMiReuk\Desktop\STL\2020 STL\강의 준비\소스.cpp(363,3): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  코드를 생성하고 있습니다.
+C:\Users\LeeMiReuk\Desktop\STL\2020 STL\강의 준비\소스.cpp(465): warning C4717: 'SearchTeam': 모든 제어 경로에서 재귀적입니다. 함수로 인해 런타임 스택 오버플로가 발생합니다.
+  2 of 38 functions ( 5.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  강의 준비.vcxproj -> C:\Users\LeeMiReuk\Desktop\STL\2020 STL\Release\강의 준비.exe

@@ -1,0 +1,106 @@
+과제 2-1
+
+[문제1~3]
+#include <iostream>
+#include <fstream>
+#include <iomanip>
+#include <algorithm>
+using namespace std;
+
+int main()
+{
+	// 문제 1
+	ifstream in("정수1000만개.data", ios::binary);
+
+	int* data = new int[1000'0000];
+	in.read((char*)data, sizeof(int) * 1000'0000);
+
+	// 문제 2 - 오른차순 정렬
+	sort(data, data + 1000'0000, [](int a, int b) {
+		return a < b;
+		});
+
+	// 문제 3
+	ofstream out("정수1000만개정렬.data", ios::binary);
+	out.write((char*)data, sizeof(data) * 1000'0000);
+	
+	delete[] data;
+	return 0;
+}
+
+과제 2-2
+[문제 1]
+#include <iostream>
+using namespace std;
+
+template<typename T>
+class Array {
+public:
+    explicit Array(size_t n) : size{ n }, num{ new T[size] } {}
+    ~Array() {
+        delete[] num;
+    };
+    Array(const Array&) = delete;
+    Array& operator=(const Array&) = delete;
+    T operator[](T index) const {
+        return num[index];
+    }
+    T& operator[](T index) {
+        return num[index];
+    }
+private:
+    size_t size{ 0 };
+    T* num{ nullptr };
+};
+
+int main()
+{
+    Array<int> a(10);
+
+    for (int i = 0; i < 10; ++i)
+        a[i] = i;
+
+    for (int i = 0; i < 10; ++i)
+        cout << a[i] << ' ';
+    cout << endl;
+
+    return 0;
+}
+
+[문제 2]
+#include <iostream>
+#include <string>
+using namespace std;
+
+template<typename T1, int num>
+class Array {
+public:
+    Array() : str{ new T1[size] } {};
+    ~Array() { delete[] str; }
+    Array(const Array&) = delete;
+    Array& operator=(const Array&) = delete;
+
+    T1 operator[](int index) const {
+        return str[index];
+    }
+    T1& operator[](int index) {
+        return str[index];
+    }
+
+private:
+    size_t size{ num };
+    T1* str{ nullptr };
+};
+
+int main()
+{
+    Array<string, 10> a;
+
+    for (int i = 0; i < 10; ++i)
+        a[i] = "string"s + to_string(i);
+
+    for (int i = 0; i < 10; ++i)
+        cout << a[i] << endl;
+
+    return 0;
+}

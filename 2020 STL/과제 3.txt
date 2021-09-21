@@ -1,0 +1,80 @@
+과제 3-1
+#include <iostream>
+#include <string>
+#include <fstream>
+#include <algorithm>
+using namespace std;
+
+int gid{ };
+
+class Dog {
+public:
+	Dog() {}
+	Dog(string name, int age) : id(++gid)
+	{
+		this->name = name;
+		this->age = age;
+	}
+	string GetName() { return name; }
+	friend ostream& operator<<(ostream&, const Dog&);
+private:
+	string name;
+	int age;
+	int id;
+};
+
+Dog dogs[1'0000];
+
+bool operator <(Dog& str1, Dog& str2)
+{
+	return str1.GetName() < str2.GetName();
+}
+
+int main()
+{
+	// 문제 1
+	ifstream in("Dog만마리", ios::binary);
+	if (!in)
+		cout << "오류" << endl;
+
+	in.read((char*)&dogs, sizeof(Dog) * 1'0000);
+	// 문제 2
+	sort(begin(dogs), end(dogs));
+	// 문제 3
+	cout << "맨 처음 강아지" << endl << dogs[0] << endl;
+	cout << "맨 마지막 강아지" << endl << dogs[9999] << endl;
+	
+	return 0;
+}
+
+ostream& operator<<(ostream& os, const Dog& dog)
+{
+	os << dog.name << ", " << dog.age << ", " << dog.id;
+	return os;
+}
+
+과제 3-2
+[문제 1]
+- 객체 소멸이 제대로 이루어지지 않았고, 여려 개 만드는 코드에서 변수명이 없어서 불안정한 코드라고 생각합니다.
+[문제 2]
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class Dog
+{
+public:
+	Dog() { cout << "생성" << endl; }
+	~Dog() { cout << "소멸" << endl; }
+};
+
+int main()
+{
+	{
+		auto dog = make_unique<Dog>();
+	}
+
+	auto dogs = unique_ptr<Dog[]> {new Dog[3]};
+	
+	return 0;
+}

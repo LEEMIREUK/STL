@@ -1,0 +1,48 @@
+과제 1-1
+
+문제1)
+#include <iostream>
+using namespace std;
+
+class X
+{
+public:
+	X(int iNum)
+		:m_iNum{ iNum } {}
+	friend ostream& operator<<(ostream& os, const X& x);
+private:
+	int m_iNum;
+};
+
+ostream& operator<<(ostream& os, const X& x)
+{
+	os << x.m_iNum;
+	return os;
+}
+
+void change(X&, X&);
+
+int main()
+{
+	X a{ 1 };
+	X b{ 2 };
+
+	change(a, b);
+
+	cout << a << ", " << b << endl;
+}
+
+void change(X& a, X& b)
+{
+	X x{ a };
+	a = b;
+	b = x;
+}
+
+과제 1-2
+
+문제1) 정수1000개.txt 파일의 크기 : 12KB
+문제2) 생성하는 정수의 자료형을 int에서 낮은 바이트의 정수 자료형으로 바꾸면 됩니다.
+         예를들어 uniform_int_distribution<int> uid;
+                 =>uniform_int_distribution<short> uid 으로 바꾸면 됩니다.
+         그 결과 12KB에서 7KB로 줄었습니다.

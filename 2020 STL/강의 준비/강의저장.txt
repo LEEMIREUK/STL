@@ -1,0 +1,1272 @@
+//-----------------------------------------
+//2020.03.17
+//-----------------------------------------
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void save(const char*);
+
+int main()
+{
+	// 내용을 읽을 파일을 연다 -> "소스.cpp"
+	ifstream in("소스.cpp");
+
+	// 읽은 내용을 저장할 파일을 연다.
+	ofstream out("강의저장.txt");
+
+	// 소스.cpp의 모든 내용을 읽어 강의저장.txt 파일에 기록한다.
+	int c;
+
+	while ((c = in.get()) != EOF)
+		cout << (char)c;
+
+	cout << "소스.cpp를 강의저장.txt에 저장하였습니다." << endl;
+
+	save("소스.cpp");
+}
+
+void save(const char* cTitle)
+{
+	ifstream in(cTitle);
+	ofstream out("강의저장.txt", ios::app);
+
+	int c;
+	while ((c = in.get()) != EOF)
+		out << (char)c;
+
+	cout << "소스cpp를 강의저장.txt.에 저장하였습니다." << endl;
+}//-----------------------------------------
+//2020.03.17
+//-----------------------------------------
+#include <iostream>
+#include <random>
+#include <fstream>
+using namespace std;
+
+void save(const char*);
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<int> uid;
+
+	ofstream out("정수1000개.txt");
+
+	for (int i = 0; i < 1000; ++i)
+		out << uid(dre) << endl;
+
+	save("소스.cpp");
+}
+
+void save(const char* cTitle)
+{
+	ifstream in(cTitle);
+	ofstream out("강의저장.txt", ios::app);
+
+	int c;
+	while ((c = in.get()) != EOF)
+		out << (char)c;
+
+	cout << "소스cpp를 강의저장.txt.에 저장하였습니다." << endl;
+}//-----------------------------------------
+//2020.03.17
+//-----------------------------------------
+#include <iostream>
+#include <random>
+#include <fstream>
+using namespace std;
+
+void save(const char*);
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<int> uid;
+
+	ofstream out("정수1000개.txt");
+
+	for (int i = 0; i < 1000; ++i)
+		out << uid(dre) << endl;
+
+	ifstream in("정수1000개.txt");
+	int n{};
+	int i{ 0 };
+
+	while (in >> n)
+		cout << ++i << " - " << n << endl;
+
+	save("소스.cpp");
+}
+
+void save(const char* cTitle)
+{
+	ifstream in(cTitle);
+	ofstream out("강의저장.txt", ios::app);
+
+	int c;
+	while ((c = in.get()) != EOF)
+		out << (char)c;
+
+	cout << "소스cpp를 강의저장.txt.에 저장하였습니다." << endl;
+}//-----------------------------------------
+//2020.03.17
+//-----------------------------------------
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void save(const char*);
+
+int main()
+{
+	// 내용을 읽을 파일을 연다 -> "소스.cpp"
+	ifstream in("소스.cpp");
+
+	// 읽은 내용을 저장할 파일을 연다.
+	ofstream out("강의저장.txt");
+
+	// 소스.cpp의 모든 내용을 읽어 강의저장.txt 파일에 기록한다.
+	int c;
+
+	while ((c = in.get()) != EOF)
+		cout << (char)c;
+
+	cout << "소스.cpp를 강의저장.txt에 저장하였습니다." << endl;
+
+	save("소스.cpp");
+}
+
+void save(const char* cTitle)
+{
+	ifstream in(cTitle);
+	ofstream out("강의저장.txt", ios::app);
+
+	int c;
+	while ((c = in.get()) != EOF)
+		out << (char)c;
+
+	cout << "소스cpp를 강의저장.txt.에 저장하였습니다." << endl;
+}//-----------------------------------------
+//2020.03.17
+//-----------------------------------------
+#include <iostream>
+#include <random>
+#include <fstream>
+using namespace std;
+
+void save(const char*);
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<int> uid;
+
+	ofstream out("정수1000개.txt");
+
+	for (int i = 0; i < 1000; ++i)
+		out << uid(dre) << endl;
+
+	save("소스.cpp");
+}
+
+void save(const char* cTitle)
+{
+	ifstream in(cTitle);
+	ofstream out("강의저장.txt", ios::app);
+
+	int c;
+	while ((c = in.get()) != EOF)
+		out << (char)c;
+
+	cout << "소스cpp를 강의저장.txt.에 저장하였습니다." << endl;
+}//-----------------------------------------
+//2020.03.17
+//-----------------------------------------
+#include <iostream>
+#include <random>
+#include <fstream>
+using namespace std;
+
+void save(const char*);
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<int> uid;
+
+	ofstream out("정수1000개.txt");
+
+	for (int i = 0; i < 1000; ++i)
+		out << uid(dre) << endl;
+
+	ifstream in("정수1000개.txt");
+	int n{};
+	int i{ 0 };
+
+	while (in >> n)
+		cout << ++i << " - " << n << endl;
+
+	save("소스.cpp");
+}
+
+void save(const char* cTitle)
+{
+	ifstream in(cTitle);
+	ofstream out("강의저장.txt", ios::app);
+
+	int c;
+	while ((c = in.get()) != EOF)
+		out << (char)c;
+
+	cout << "소스cpp를 강의저장.txt.에 저장하였습니다." << endl;
+}//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save a;
+
+	int num = 0B1111111111111111111111111111111;
+
+	cout << "num의 메모리 크기는 " << sizeof(num) << "바이트" << endl;
+	cout << "num에 저장된 값은 " << num << endl;
+
+	string s{ to_string(num) };
+	cout << "num을 글자로 저장하려면 " << size(s) << "바이트가 필요합니다." << endl;
+	
+	a.Save("소스.cpp");
+}
+//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save a;
+
+	default_random_engine dre;
+	uniform_int_distribution<int> uid;
+	ofstream out("정수1000개.txt");
+	
+	int n;
+
+	for (int i = 0; i < 1000; ++i)
+	{
+		n = uid(dre);
+		out.write((char*)&n, sizeof(n));
+		// out.writhe(reinterpret_cast<const char*>(&n), sizeof(n));
+	}
+
+
+	a.Save("소스.cpp");
+}
+//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save a;
+
+	default_random_engine dre;
+	uniform_int_distribution<int> uid;
+	ofstream out("정수1000개.txt", ios::binary);
+	
+	int n;
+
+	for (int i = 0; i < 1000; ++i)
+	{
+		n = uid(dre);
+		out.write((char*)&n, sizeof(n));
+	}
+
+	a.Save("소스.cpp");
+}
+//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save a;
+
+	ifstream in("정수1000개.txt", ios::binary);
+
+	int n;
+	int max{ numeric_limits<int>::min() };
+
+	for (int i = 0; i < 1000; ++i)
+	{
+		in.read((char*)&n, sizeof(n));
+		if (max < n)
+			max = n;
+	}
+
+	cout << "|정수1000개.txt|에 저장된 int 중 가장 큰 값은 " << max << endl;
+
+	a.Save("소스.cpp");
+}
+//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save a;
+
+	ifstream in("정수1000개.txt", ios::binary);
+
+	int data[1000];
+
+	in.read((char*)&data, sizeof(int) * 1000);
+
+	// 확인용 출력
+	for (int n : data)
+		cout << setw(20) << left << n;
+
+	a.Save("소스.cpp");
+}
+//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int compareFunc(const void*, const void*);
+
+int main()
+{
+	save a;
+
+	ifstream in("정수1000개.txt", ios::binary);
+
+	int data[1000];
+
+	in.read((char*)&data, sizeof(int) * 1000);
+	
+	qsort(data, 1000, sizeof(int), compareFunc);
+	
+
+	// 확인용 출력
+	for (int n : data)
+		cout << setw(20) << left << n;
+
+	a.Save("소스.cpp");
+}
+
+int compareFunc(const void* a, const void* b)
+{
+	int num1 = *static_cast<const int*>(a);
+	int num2 = *static_cast<const int*>(b);
+
+	return num1 - num2;
+}
+//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int compareFunc(const void*, const void*);
+
+int main()
+{
+	save a;
+
+	ifstream in("정수1000개.txt", ios::binary);
+
+	int data[1000];
+
+	in.read((char*)&data, sizeof(int) * 1000);
+	
+	qsort(data, 1000, sizeof(int), [](const void* a, const void* b) {
+			return *(static_cast<int const*>(a)) - *(static_cast<int const*>(b)); 
+		});
+
+	// 확인용 출력
+	for (int n : data)
+		cout << setw(20) << left << n;
+
+	a.Save("소스.cpp");
+}//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save a;
+
+	ifstream in("정수1000개.txt", ios::binary);
+
+	int data[1000];
+
+	in.read((char*)&data, sizeof(int) * 1000);
+	
+	sort(begin(data), end(data), [](int a, int b) {
+		return a < b;
+		});
+
+	// 확인용 출력
+	for (int n : data)
+		cout << setw(20) << left << n;
+
+	a.Save("소스.cpp");
+}//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save a;
+
+	ifstream in("정수1000개.txt", ios::binary);
+
+	int data[1000];
+
+	in.read((char*)&data, sizeof(int) * 1000);
+	
+	sort(begin(data), end(data), [](int a, int b) {
+		return a > b;
+		});
+
+	// 확인용 출력
+	for (int n : data)
+		cout << setw(20) << left << n;
+
+	a.Save("소스.cpp");
+}//-----------------------------------------
+//2020.03.23
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+
+int main()
+{
+	save s;
+	s.Save("소스.cpp");
+
+	// 문제 1
+	ifstream in("정수1000만개.data", ios::binary);
+
+	int* data = new int[1000'0000];
+	in.read((char*)data, sizeof(int) * 1000'0000);
+
+	// 문제 2 - 오른차순 정렬
+	sort(data, data + 1000'0000);
+
+	// 문제 3
+	ofstream out("정수1000만개정렬.data", ios::binary);
+	out.write((char*)data, sizeof(data) * 1000'0000);
+
+	// 출력
+	for (int i = 0; i < 1000'0000; ++i)
+	{
+		cout << setw(20) << left << data[i];
+	}
+
+	delete[] data;
+	return 0;
+}//-----------------------------------------
+//2020.03.24
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+#include <thread>
+#include <chrono>
+
+int main()
+{
+	cout << "시작" << endl;
+	
+	using namespace std::chrono;
+	
+	auto start = steady_clock::now();
+
+	this_thread::sleep_for(3000ms);
+
+	auto d = duration_cast<milliseconds>(steady_clock::now() - start);
+
+	cout << d.count() << "밀리초가 걸림" << endl;
+
+	save a;
+	a.Save("소스.cpp");
+
+	return 0;
+}//-----------------------------------------
+//2020.03.24
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+#include <chrono>
+#include <algorithm>
+#include <random>
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int data[10'0000];
+
+	for (int& d : data)
+		d = uid(dre);
+
+	auto start = chrono::steady_clock::now();
+	
+	sort(begin(data), end(data));
+
+	auto d = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - start);
+
+	cout << d.count() << "밀리초가 걸림" << endl;
+
+	cout << data[0] << "---" << data[10'0000 - 1] << endl;
+
+	save a;
+	a.Save("소스.cpp");
+
+	return 0;
+}//-----------------------------------------
+//2020.03.24
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+#include <chrono>
+#include <algorithm>
+#include <random>
+
+int main()
+{
+	default_random_engine dre;
+	uniform_int_distribution<> uid;
+
+	int data[10'0000];
+
+	for (int& d : data)
+		d = uid(dre);
+
+	auto start = chrono::steady_clock::now();
+	
+	qsort(begin(data), 10'0000, sizeof(int), [](const void* a, const void* b) {
+		return *(static_cast<int const*>(a)) - *(static_cast<int const*>(b));
+		});
+
+	auto d = chrono::duration_cast<chrono::milliseconds>(chrono::steady_clock::now() - start);
+
+	cout << d.count() << "밀리초가 걸림" << endl;
+
+	cout << data[0] << "---" << data[10'0000 - 1] << endl;
+
+	save a;
+	a.Save("소스.cpp");
+
+	return 0;
+}//-----------------------------------------
+//2020.03.24
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+#include <string>
+
+template<typename T>
+void change(T&, T&);
+
+int main()
+{
+	string a{ "19"s };
+	string b{ "corona" };
+
+	change(a, b);
+
+	cout << a << b << "바이러스" << endl;
+
+	save s;
+	s.Save("소스.cpp");
+
+	return 0;
+}
+
+template <typename T>
+void change(T& a, T& b)
+{
+	T t{ a };
+	a = b;
+	b = t;
+}//-----------------------------------------
+//2020.03.25
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+using namespace std;
+
+template<typename T>
+class Array {
+public:
+    explicit Array(size_t n) : size{ n }, num{ new T[size] } {}
+    ~Array() {
+        delete[] num;
+    };
+    Array(const Array&) = delete;
+    Array& operator=(const Array&) = delete;
+    T operator[](T index) const {
+        return num[index];
+    }
+    T& operator[](T index) {
+        return num[index];
+    }
+private:
+    size_t size{ 0 };
+    T* num{ nullptr };
+};
+
+int main()
+{
+    Array<int> a(10);
+
+    for (int i = 0; i < 10; ++i)
+        a[i] = i;
+
+    for (int i = 0; i < 10; ++i)
+        cout << a[i] << ' ';
+    cout << endl;
+
+    save s;
+    s.Save("소스.cpp");
+}//-----------------------------------------
+//2020.03.25
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+#include <string>
+
+template<typename T1, int num>
+class Array {
+public:
+    Array() : str{ new T1[size] } {};
+    ~Array() { delete[] str; }
+    Array(const Array&) = delete;
+    Array& operator=(const Array&) = delete;
+
+    T1 operator[](int index) const {
+        return str[index];
+    }
+    T1& operator[](int index) {
+        return str[index];
+    }
+
+private:
+    size_t size = num;
+    T1* str{ nullptr };
+};
+
+int main()
+{
+    Array<string, 10> a;
+
+    for (int i = 0; i < 10; ++i)
+        a[i] = "string"s + to_string(i);
+
+    for (int i = 0; i < 10; ++i)
+        cout << a[i] << endl;
+    
+    save s;
+    s.Save("소스.cpp");
+
+    return 0;
+}//-----------------------------------------
+//2020.03.25
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <string>
+#include <random>
+using namespace std;
+
+int gid{};
+
+default_random_engine dre;
+uniform_int_distribution<int> uidAge(1, 12);
+uniform_int_distribution<int> uidName('a', 'z');
+uniform_int_distribution<int> uidNameLen(3, 15);
+
+class  Dog {
+public:
+	Dog() : id(++gid) {
+		int len = uidNameLen(dre);
+		for (int i = 0; i < len; ++i)
+			name += uidName(dre);
+		age = uidAge(dre);
+	}
+	Dog(string name, int age) : name{ name }, age{ age }, id(++gid){}
+	friend ostream& operator<<(ostream&, const Dog&);
+
+private:	
+	string name;
+	int age;
+	int id;
+};
+
+int main()
+{
+	Dog dogs[100];
+	for (const Dog& dog : dogs)
+		cout << dog << endl;
+
+	save s;
+	s.Save("소스.cpp");
+}
+
+ostream& operator<<(ostream& os, const Dog& dog)
+{
+	os << dog.name << ", " << dog.age << ", " << dog.id;
+	return os;
+}//-----------------------------------------
+//2020.03.25
+//-----------------------------------------
+#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <string>
+#include <random>
+#include <ostream>
+using namespace std;
+
+int gid{};
+
+default_random_engine dre;
+uniform_int_distribution<int> uidAge(1, 12);
+uniform_int_distribution<int> uidName('a', 'z');
+uniform_int_distribution<int> uidNameLen(3, 15);
+
+class  Dog {
+public:
+	Dog() : id(++gid) {
+		int len = uidNameLen(dre);
+		for (int i = 0; i < len; ++i)
+			name += uidName(dre);
+		age = uidAge(dre);
+	}
+	Dog(string name, int age) : name{ name }, age{ age }, id(++gid){}
+	friend ostream& operator<<(ostream&, const Dog&);
+
+private:	
+	string name;
+	int age;
+	int id;
+};
+
+int main()
+{
+	ofstream out("Dog만마리", ios::binary);
+	for (int i = 0; i < 1'0000; ++i)
+	{
+		Dog d;
+		out.write((char*)&d, sizeof(Dog));
+	}
+
+	save s;
+	s.Save("소스.cpp");
+}
+
+ostream& operator<<(ostream& os, const Dog& dog)
+{
+	os << dog.name << ", " << dog.age << ", " << dog.id;
+	return os;
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <string>
+#include <random>
+#include <ostream>
+#include <fstream>
+#include <algorithm>
+using namespace std;
+
+int gid{ };
+
+class Dog {
+public:
+	Dog() {}
+	Dog(string name, int age) : id(++gid)
+	{
+		this->name = name;
+		this->age = age;
+	}
+	string GetName() { return name; }
+	friend ostream& operator<<(ostream&, const Dog&);
+private:
+	string name;
+	int age;
+	int id;
+};
+
+Dog dogs[1'0000];
+
+bool operator <(Dog& str1, Dog& str2)
+{
+	return str1.GetName() < str2.GetName();
+}
+
+int main()
+{
+	ifstream in("Dog만마리", ios::binary);
+	if (!in)
+		cout << "오류" << endl;
+
+	in.read((char*)&dogs, sizeof(Dog) * 1'0000);
+
+	sort(begin(dogs), end(dogs));
+
+	cout << "맨 처음 강아지" << endl << dogs[0] << endl;
+	cout << "맨 마지막 강아지" << endl << dogs[9999] << endl;
+
+	save s;
+	s.Save("소스.cpp");
+}
+
+ostream& operator<<(ostream& os, const Dog& dog)
+{
+	os << dog.name << ", " << dog.age << ", " << dog.id;
+	return os;
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void f(int n)
+{
+	cout << "f: " << n << endl;
+};
+
+int main()
+{
+	f(1);
+	(*f)(2);
+	void* p = f;
+
+	cout << "함수 f의 주소: " << p << endl;
+
+	int n{};
+	cout << "스택의 주소: " << &n << endl;
+
+	(*(void(*)(int))p)(3);
+
+	save s;
+	s.Save("소스.cpp");
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <cmath>
+#include <thread>
+using namespace std;
+
+int main()
+{
+	save s;
+	s.Save("소스.cpp");
+
+	double rad{ 2 * 3.1416 };
+	int val;
+	int freq;
+
+	cout << "주파수를 입력하세요(Hz) 추천값은 10 -";
+	cin >> freq;
+
+	double inc = 1. / freq;
+
+	while (true)
+	{
+		val = sin(rad) * 39 + 39;
+		for (int i = 0; i < val; ++i)
+			cout << ' ';
+		cout << "*" << endl;
+		rad += inc;
+		this_thread::sleep_for(33ms);
+	}
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <cmath>
+#include <thread>
+using namespace std;
+
+void jump();
+void slide();
+
+int main()
+{
+	char key;
+	bool flag{ false };
+	while (true)
+	{
+		cout << "a 나 d 키를 누르세요. 끝내려면 q를 누르세요: ";
+		cin >> key;
+
+		switch (key)
+		{
+		case 'a':
+		case 'A':
+			jump();
+			break;
+		case 'd':
+		case 'D':
+			slide();
+			break;
+		case 'q':
+		case 'Q':
+			flag = true;
+			break;
+		default:
+			break;
+		}
+		if (flag == true)
+			break;
+	}
+	save s;
+	s.Save("소스.cpp");
+}
+
+void jump()
+{
+	cout << "점프" << endl;
+}
+
+void slide()
+{
+	cout << "슬라이드" << endl;
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <cmath>
+#include <thread>
+using namespace std;
+
+void jump();
+void slide();
+
+void (*func1)() = jump;
+void (*func2)() = slide;
+
+int main()
+{
+	char key;
+	bool flag{ false };
+
+	while (true)
+	{
+		cout << "a 나 d 키를 누르세요. 끝내려면 q를 누르세요: ";
+		cin >> key;
+
+		switch (key)
+		{
+		case 'a':
+		case 'A':
+			func1();
+			break;
+		case 'd':
+		case 'D':
+			func2();
+			break;
+		case 'c':
+		case 'C':
+		{
+			auto temp{ func1 };
+			func1 = func2;
+			func2 = temp;
+		}
+			break;
+		case 'q':
+		case 'Q':
+			flag = true;
+			break;
+		default:
+			break;
+		}
+		if (flag == true)
+			break;
+	}
+	save s;
+	s.Save("소스.cpp");
+}
+
+void jump()
+{
+	cout << "점프" << endl;
+}
+
+void slide()
+{
+	cout << "슬라이드" << endl;
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <functional>
+using namespace std;
+
+void f(int n)
+{
+	cout << n << " - 진짜 그냥 함수" << endl;
+}
+
+class Dog
+{
+public:
+	void operator()(int n)
+	{
+		cout << n << "- function object" << endl;
+	}
+};
+
+void(*fp)(int) = f;
+
+auto lambda = [](int n)
+{
+	cout << n << " - 이름 없는 함수 람다" << endl;
+};
+
+int main()
+{
+	function<void(int)> func;
+	cout << typeid(func).name() << endl;
+
+	func = f;
+	func(1);
+
+	func = Dog();
+	func(2);
+
+	func = fp;
+	func(3);
+
+	func = lambda;
+	func(4);
+
+	save s;
+	s.Save("소스.cpp");
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class Dog
+{
+public:
+	Dog() { cout << "생성" << endl; }
+	~Dog() { cout << "소멸" << endl; }
+
+	void show()
+	{
+		cout << "Dog입니다만" << endl;
+	}
+private:
+	int n;
+};
+
+void f(unique_ptr<Dog>);
+
+int main()
+{
+	unique_ptr<Dog> p{ new Dog };
+
+	p->show();
+
+	cout << sizeof(p) << endl;
+
+	f(move(p));
+
+	save s;
+	s.Save("소스.cpp");
+}
+
+void f(unique_ptr<Dog> pDog)
+{
+	pDog->show();
+	cout << "f" << endl;
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <memory>
+using namespace std;
+
+class Dog
+{
+public:
+	Dog() { cout << "생성" << endl; }
+	~Dog() { cout << "소멸" << endl; }
+
+	void show()
+	{
+		cout << "Dog입니다만" << endl;
+	}
+private:
+	int n;
+};
+
+void f(unique_ptr<Dog>);
+
+int main()
+{
+	Dog* dog = new Dog;
+	delete dog;
+
+	Dog* dogs = new Dog[3];
+	delete[] dogs;
+
+	save s;
+	s.Save("소스.cpp");
+}
+
+void f(unique_ptr<Dog> pDog)
+{
+	pDog->show();
+	cout << "f" << endl;
+}#include "pch.h"
+#include "save.h"
+#include <iostream>
+#include <array>
+using namespace std;
+
+int main()
+{
+	array<int, 100'000> a;
+
+	cout << "a의 크기 - " << sizeof(a) << endl;
+
+	save t;
+	t.Save("소스.cpp");
+	return 0;
+}#include "pch.h"
+#include <iostream>
+#include <array>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	array<String, 5> words{ "corona", "virus" , "world", "crisis","pandemic" };
+	
+	cout << words[0] << endl;
+
+	auto p = words.begin();
+	cout << *p << endl;
+
+	++p;
+	cout << *p << endl;
+
+	for (int i = 0; i < words.size(); ++i)
+		cout << words[i] << " ";
+	cout << endl;
+
+	for (auto p = words.begin(); p != words.end(); ++p)
+		cout << *p << " ";
+	cout << endl;
+
+	for (const String& word : words)
+		cout << word << " ";
+	cout << endl;
+
+	try
+	{
+		cout << "이건 없는 원소잖아?" << words.at(-1) << endl;
+	}
+	catch (const exception& e)
+	{
+		cout << "C++에서 예외를 사용하다니? - " << e.what() << endl;
+	}
+
+	save t;
+	t.Save("소스.cpp");
+	return 0;
+}#include "pch.h"
+#include <iostream>
+#include <array>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	array<String, 5> words{ "corona", "virus" , "world", "crisis","pandemic" };
+	
+	for (int i = 0; i < words.size(); ++i)
+		cout << words[i] << endl;
+
+	save t;
+	t.Save("소스.cpp");
+	return 0;
+}#include "pch.h"
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	array<String, 5> words{ "corona", "virus" , "world", "crisis","pandemic" };
+	
+	cout << "- 정렬하기 전 array<String, 5> 의 내용 -" << endl;
+	for (int i = 0; i < words.size(); ++i)
+		cout << words[i] << endl;
+	cout << endl;
+	cout << endl;
+
+	sort(words.begin(), words.end(), [](const String& a, const String& b) {
+		return a.getString() < b.getString();
+		});
+
+	cout << "정렬한 후 array<String, 5> 의 내용 - " << endl;
+	for (int i = 0; i < words.size(); ++i)
+		cout << words[i] << endl;
+
+
+	cout << endl;
+	save t;
+	t.Save("소스.cpp");
+	return 0;
+}#include "pch.h"
+#include <iostream>
+#include <array>
+#include <algorithm>
+#include "save.h"
+#include "String.h"
+using namespace std;
+
+int main()
+{
+	array<String, 5> words{ "New", "York" , "schools", "dropping","Zoom" };
+	
+	sort(words.begin(), words.end(), [](const String& a, const String& b) {
+		return a.getString() < b.getString();
+		});
+
+	cout << "정렬한 후 array<String, 5> 의 내용 - " << endl;
+	for (int i = 0; i < words.size(); ++i)
+		cout << words[i] << endl;
+
+
+	cout << endl;
+	save t;
+	t.Save("소스.cpp");
+	return 0;
+}
